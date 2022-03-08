@@ -6,16 +6,7 @@
       </figure>
       <nav>
         <ul>
-          <li><a href="">charachters</a></li>
-          <li><a href="">comics</a></li>
-          <li><a href="">movies</a></li>
-          <li><a href="">tv</a></li>
-          <li><a href="">games</a></li>
-          <li><a href="">collectibles</a></li>
-          <li><a href="">videos</a></li>
-          <li><a href="">fans</a></li>
-          <li><a href="">news</a></li>
-          <li><a href="">shop</a></li>
+          <li v-for="(link,index) in headerLinks" :key="index"><a href="">{{link.nameLink}}</a></li>
         </ul>
       </nav>
     </div>
@@ -25,7 +16,52 @@
 <script>
 export default {
   name: 'appHeader',
-  
+  data: function() {
+    return{
+      headerLinks : [
+        {
+          nameLink : 'charachters',
+          href: ''
+        },
+        {
+          nameLink : 'comics',
+          href: ''
+        },
+        {
+          nameLink : 'movies',
+          href: ''
+        },
+        {
+          nameLink : 'tv',
+          href: ''
+        },
+        {
+          nameLink : 'games',
+          href: ''
+        },
+        {
+          nameLink : 'collectibles',
+          href: ''
+        },
+        {
+          nameLink : 'videos',
+          href: ''
+        },
+        {
+          nameLink : 'fans',
+          href: ''
+        },
+        {
+          nameLink : 'news',
+          href: ''
+        },
+        {
+          nameLink : 'shop',
+          href: ''
+        },
+      ]
+    }
+  }
 }
 </script>
 
@@ -34,7 +70,7 @@ export default {
   .container{
     display: flex;
     justify-content: space-between;
-    
+    padding: 20px 0;
     .logo{
       img{
         width: 80px;
@@ -44,7 +80,7 @@ export default {
     nav{
       display: flex;
       align-items: center;
-
+      
       ul{
         display: contents;
         list-style: none;

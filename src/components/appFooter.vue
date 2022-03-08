@@ -105,7 +105,6 @@ export default {
                     overflow: hidden;
                     img{
                         margin:-90px 0;
-                        
                     }
                 }
             }
