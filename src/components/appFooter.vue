@@ -130,6 +130,9 @@ export default {
                    border: 2px solid #0282F9;
                    padding: 15px;
                    text-decoration: none;
+                   &:hover{
+                       border: 2px solid #329cff;
+                   }
                }
                display: flex;
                justify-content: space-between;

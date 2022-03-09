@@ -6,7 +6,7 @@
       
       <nav>
         <ul>
-          <li v-for="(link,index) in headerLinks" :key="index"><a href="">{{link.nameLink}}</a></li>
+          <li v-for="(link,index) in headerLinks" :key="index" :class="link.active ? 'active' : '' "><a href="">{{link.nameLink}}</a></li>
         </ul>
       </nav>
     </div>
@@ -21,7 +21,8 @@ export default {
       headerLinks : [
         {
           nameLink : 'charachters',
-          href: ''
+          href: '',
+          active: true
         },
         {
           nameLink : 'comics',
@@ -88,6 +89,7 @@ export default {
 
         li{
           padding: 40px 10px;
+          position: relative;
           a{
             text-decoration: none;
             color: #464646;
@@ -97,6 +99,19 @@ export default {
             
             &:hover{
               color: #2392FA;
+            }
+
+            &:active{
+              li.active::after{
+                content: '';
+                display: block;
+                height: 4px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #2392FA;
+              }
             }
             
           }
