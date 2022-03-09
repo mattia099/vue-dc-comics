@@ -8,11 +8,10 @@
         <div class="menu">
             <div class="container">
                 <ul>
-                    <li><img src="../assets/buy-comics-digital-comics.png">digital comics</li>
-                    <li><img src="../assets/buy-comics-merchandise.png">dc merchandise</li>
-                    <li><img src="../assets/buy-comics-subscriptions.png">subscriptions</li>
-                    <li><img src="../assets/buy-comics-shop-locator.png">comic shop location</li>
-                    <li><img src="../assets/buy-dc-power-visa.svg">dc power visa</li>
+                    <li v-for="(item,index) in icons" :key="index">
+                        <img :src="item.image">
+                        {{item.text}}
+                    </li>
                 </ul>
             </div>
         </div>
@@ -22,6 +21,32 @@
 <script>
 export default {
     name : 'appMain',
+    data : function(){
+        return {
+            icons:[
+                {
+                    image : require('../assets/buy-comics-digital-comics.png'),
+                    text : 'digital comics'
+                },
+                {
+                    image : require('../assets/buy-comics-merchandise.png'),
+                    text : 'dc merchandise'
+                },
+                {
+                    image : require('../assets/buy-comics-subscriptions.png'),
+                    text : 'subscription'
+                },
+                {
+                    image : require('../assets/buy-comics-shop-locator.png'),
+                    text : 'comic shop locator'
+                },
+                {
+                    image : require('../assets/buy-dc-power-visa.svg'),
+                    text : 'dc power visa'
+                },
+            ]
+        }
+    }
     
 }
 </script>

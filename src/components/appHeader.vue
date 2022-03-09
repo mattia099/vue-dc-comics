@@ -1,9 +1,9 @@
 <template>
   <header>
     <div class="container">
-      <figure class="logo">
-        <img src="../assets/dc-logo.png">
-      </figure>
+      
+      <img src="../assets/dc-logo.png">
+      
       <nav>
         <ul>
           <li v-for="(link,index) in headerLinks" :key="index"><a href="">{{link.nameLink}}</a></li>
@@ -70,23 +70,24 @@ export default {
   .container{
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
-    .logo{
-      img{
-        width: 80px;
-      }
+    align-items: center;
+    
+    img{
+      width: 80px;
+      height: 80px;
+      vertical-align: center;
     }
+    
 
     nav{
       display: flex;
       align-items: center;
-      
       ul{
         display: contents;
         list-style: none;
 
         li{
-          padding: 12px;
+          padding: 40px 10px;
           a{
             text-decoration: none;
             color: #464646;
@@ -97,6 +98,7 @@ export default {
             &:hover{
               color: #2392FA;
             }
+            
           }
         }
       }
