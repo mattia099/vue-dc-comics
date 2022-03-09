@@ -54,11 +54,9 @@
 
                 <div class="container-logo">
                     <a href="">follow us</a>
-                    <img src="../assets/footer-facebook.png" alt="">
-                    <img src="../assets/footer-twitter.png" alt="">
-                    <img src="../assets/footer-youtube.png" alt="">
-                    <img src="../assets/footer-pinterest.png" alt="">
-                    <img src="../assets/footer-periscope.png" alt="">
+                    <figure v-for="( logo,index ) in images" :key="index">
+                    <img :src="logo" alt="">
+                    </figure>
                 </div>
             </div>
         </div>
@@ -67,7 +65,18 @@
 
 <script>
 export default {
-    name : 'appFooter'
+    name : 'appFooter',
+    data : function(){
+        return{
+            images : [
+                require('../assets/footer-facebook.png'),
+                require('../assets/footer-twitter.png'),
+                require('../assets/footer-youtube.png'),
+                require('../assets/footer-pinterest.png'),
+                require('../assets/footer-periscope.png')
+            ]
+        }
+    }
 }
 </script>
 
@@ -131,6 +140,9 @@ export default {
                    a{
                        text-decoration: none;
                        color:#0282F9
+                   }
+                   img{
+                       width: max-content;
                    }
                }
            }
